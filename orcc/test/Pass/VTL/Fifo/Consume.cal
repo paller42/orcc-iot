@@ -1,0 +1,10 @@
+package Fifo;
+
+actor Consume () int I ==> :
+
+	do_sum: action I:[i] ==>
+	do
+		println("i = " + i);
+	end
+
+end

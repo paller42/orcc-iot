@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Network file-format="xdf" qualified-id="AHU_Unit"/>
+    <Partitioning>
+        <Partition id="server_0" pe="x86_0" backend-id="Java Server" host="intel_server">
+            <Instance id="weather_forecast_temperature"/>
+            <Instance id="weighted_average"/>
+            <Instance id="pid_controller"/>
+            <Instance id="power_attenuator"/>
+            <Instance id="cold_room_power_estimator"/>
+        </Partition>
+        <Partition id="server_1" pe="x86_1" backend-id="Java Server" host="intel_server">
+            <Instance id="pid_controller"/>
+        </Partition>
+        <Partition id="air_temp_0" pe="ARM" backend-id="Java 0">
+            <Instance id="return_air_temperature"/>
+        </Partition>
+        <Partition id="air_temp_1" pe="ARM" backend-id="Java 0">
+            <Instance id="outdoor_air_temperature"/>
+        </Partition>
+        <Partition id="fan_power" pe="ARM" backend-id="Java 1">
+            <Instance id="supply_fan_power"/>
+        </Partition>
+    </Partitioning>
+    <Backends>
+        <Backend id="Java Server" backend="Java Server"/>
+        <Backend id="Java 0" backend="Java Vanilla">
+            <Parameter key="Board" value="XX"/>
+        </Backend>
+        <Backend id="Java 1" backend="Java Vanilla">
+            <Parameter key="Board" value="ZZ"/>
+        </Backend>
+    </Backends>
+    <Media>
+        <Interface id="wifi" medium="Wifi">
+            <Parameter key="Server IP Address" value="192.168.0.1"/>
+        </Interface>
+    </Media>
+    <Connections>
+        <Fifo-Connection src="return_air_temperature" src-port="Out" dst="pid_controller" dst-port="operand_1" size="512" medium-id="wifi"/>
+        <Fifo-Connection src="outdoor_air_temperature" src-port="Out" dst="weighted_average" dstport="operand_1" size="512" medium-id="wifi"/>
+        <Fifo-Connection src="power_attenuator" src-port="result" dst="supply_fan_power" dst-port="In" size="512" medium-id="wifi"/>
+    </Connections>
+
+</Configuration>

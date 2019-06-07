@@ -1,0 +1,28 @@
+package test.pass;
+
+actor Elsif() ==> :
+	
+	initialize ==>
+	do
+		if false then
+			print("error1");
+		elsif false then
+			print("error2");
+		elsif true then
+			print("ok");
+		else
+			print("error3");
+		end
+
+		if false then
+			print("error4");
+		elsif false then
+			print("error5");
+		elsif false then
+			print("error6");
+		else
+			print("ok");
+		end
+	end
+
+end

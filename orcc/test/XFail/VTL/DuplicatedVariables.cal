@@ -1,0 +1,17 @@
+actor DuplicatedVariables (int a,
+	int a) int P, int P ==> int O, int O :
+
+	int x := 0;
+
+	int x;
+
+	action P:[ x ] ==>
+	var
+		int x , int z , bool z , List(type: int, size=64) L
+	do
+		x := z;
+		z := z;
+		L := [ 0 : for int i in 1 .. 8, for int i in 1 .. 8 ];
+	end
+
+end

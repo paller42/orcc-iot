@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: net.sf.orcc.cal
+Bundle-SymbolicName: net.sf.orcc.cal; singleton:=true
+Require-Bundle: net.sf.orcc.core;bundle-version="2.3.1";visibility:=re
+ export,org.eclipse.xtext;bundle-version="2.15.0",org.antlr.runtime;bu
+ ndle-version="3.2.0",org.apache.commons.logging;resolution:=optional,
+ org.apache.commons.lang,org.eclipse.core.resources;bundle-version="3.
+ 7.0",org.eclipse.core.runtime;bundle-version="3.7.0",org.eclipse.emf.
+ common;bundle-version="2.7.0",org.eclipse.emf.ecore;bundle-version="2
+ .7.0",org.eclipse.emf.mwe2.launch;bundle-version="2.0.0";resolution:=
+ optional,org.eclipse.xtext.generator;bundle-version="2.0.0";resolutio
+ n:=optional,org.eclipse.jdt.core;bundle-version="3.7.0",org.eclipse.x
+ text.util;bundle-version="2.0.0",org.objectweb.asm;bundle-version="5.
+ 0.1",org.eclipse.xtext.xbase.lib,org.eclipse.xtext.common.types
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: IETR/INSA Rennes
+Import-Package: org.apache.log4j,org.eclipse.xtext.xbase.lib
+Export-Package: net.sf.orcc.cache,net.sf.orcc.cal,net.sf.orcc.cal.cal,
+  net.sf.orcc.cal.cal.impl,net.sf.orcc.cal.cal.util,net.sf.orcc.cal.pa
+ rser.antlr,net.sf.orcc.cal.parser.antlr.internal,net.sf.orcc.cal.serv
+ ices,net.sf.orcc.cal.util,net.sf.orcc.cal.validation,net.sf.orcc.fron
+ tend,net.sf.orcc.cal.formatting,net.sf.orcc.cal.scoping,net.sf.orcc.c
+ al.generator,net.sf.orcc.cal.serializer
+Bundle-Name: RVC-CAL Xtext model plug-in
+Bundle-Version: 2.3.1.201906062042
+Bundle-ClassPath: .,lib/jgrapht-0.9.0/jgrapht-core-0.9.0.jar,lib/jgrap
+ ht-0.9.0/jgrapht-ext-0.9.0.jar
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://orcc.sf.net/cal/Cal" 
+       class = "net.sf.orcc.cal.cal.CalPackage"
+       genModel = "model/generated/Cal.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>

@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: net.sf.orcc.xdf.ui
+Bundle-SymbolicName: net.sf.orcc.xdf.ui;singleton:=true
+Require-Bundle: net.sf.orcc.ui,net.sf.orcc.cal,org.eclipse.ui,org.ecli
+ pse.ui.ide,org.eclipse.ui.views.properties.tabbed,org.eclipse.ui.work
+ bench,org.eclipse.core.runtime,org.eclipse.graphiti,org.eclipse.graph
+ iti.ui,org.eclipse.graphiti.pattern,org.eclipse.draw2d,org.eclipse.ge
+ f,org.eclipse.emf.transaction,com.google.guava,org.eclipse.jdt.core,o
+ rg.eclipse.emf.common
+Bundle-ManifestVersion: 2
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Bundle-Vendor: IETR/INSA Rennes
+Import-Package: net.sf.orcc.ui
+Bundle-Name: XDF Graph Editor
+Bundle-Version: 2.3.1.201906062042
+Bundle-ClassPath: lib/klay_0.11.0.jar,.
+Bundle-Activator: net.sf.orcc.xdf.ui.Activator
+

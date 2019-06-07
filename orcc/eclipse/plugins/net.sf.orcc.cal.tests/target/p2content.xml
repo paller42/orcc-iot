@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='net.sf.orcc.cal.tests' version='2.3.1.201906062042' singleton='false'>
+    <update id='net.sf.orcc.cal.tests' range='[0.0.0,2.3.1.201906062042)' severity='0'/>
+    <properties size='4'>
+      <property name='org.eclipse.equinox.p2.name' value='net.sf.orcc.cal.tests'/>
+      <property name='maven-groupId' value='net.sf.orcc'/>
+      <property name='maven-artifactId' value='net.sf.orcc.cal.tests'/>
+      <property name='maven-version' value='2.3.1-SNAPSHOT'/>
+    </properties>
+    <provides size='4'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='net.sf.orcc.cal.tests' version='2.3.1.201906062042'/>
+      <provided namespace='osgi.bundle' name='net.sf.orcc.cal.tests' version='2.3.1.201906062042'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal' version='0.0.0'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+    </provides>
+    <requires size='20'>
+      <required namespace='osgi.bundle' name='net.sf.orcc.backends' range='2.3.1'/>
+      <required namespace='osgi.bundle' name='net.sf.orcc.cal' range='2.3.1'/>
+      <required namespace='osgi.bundle' name='net.sf.orcc.cal.ui' range='2.3.1'/>
+      <required namespace='osgi.bundle' name='net.sf.orcc.core' range='2.3.1'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext' range='2.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.junit4' range='2.0.0'/>
+      <required namespace='osgi.bundle' name='org.junit' range='4.8.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.jdt.core' range='3.7.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtend.lib' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='com.google.guava' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase.lib' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.ui.workbench' range='0.0.0' optional='true' greedy='false'/>
+      <required namespace='osgi.bundle' name='org.objectweb.asm' range='[5.0.1,7.0.0)' optional='true' greedy='false'/>
+      <required namespace='java.package' name='org.junit.runner' range='4.5.0'/>
+      <required namespace='java.package' name='org.junit.runner.manipulation' range='4.5.0'/>
+      <required namespace='java.package' name='org.junit.runner.notification' range='4.5.0'/>
+      <required namespace='java.package' name='org.junit.runners' range='4.5.0'/>
+      <required namespace='java.package' name='org.junit.runners.model' range='4.5.0'/>
+      <required namespace='java.package' name='org.hamcrest.core' range='0.0.0'/>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='net.sf.orcc.cal.tests' version='2.3.1.201906062042'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: net.sf.orcc.cal.tests&#xA;Bundle-Version: 2.3.1.201906062042&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>

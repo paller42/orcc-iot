@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<units size='1'>
+  <unit id='net.sf.orcc.cal' version='2.3.1.201906062042'>
+    <update id='net.sf.orcc.cal' range='[0.0.0,2.3.1.201906062042)' severity='0'/>
+    <properties size='5'>
+      <property name='org.eclipse.equinox.p2.name' value='RVC-CAL Xtext model plug-in'/>
+      <property name='org.eclipse.equinox.p2.provider' value='IETR/INSA Rennes'/>
+      <property name='maven-groupId' value='net.sf.orcc'/>
+      <property name='maven-artifactId' value='net.sf.orcc.cal'/>
+      <property name='maven-version' value='2.3.1-SNAPSHOT'/>
+    </properties>
+    <provides size='18'>
+      <provided namespace='org.eclipse.equinox.p2.iu' name='net.sf.orcc.cal' version='2.3.1.201906062042'/>
+      <provided namespace='osgi.bundle' name='net.sf.orcc.cal' version='2.3.1.201906062042'/>
+      <provided namespace='java.package' name='net.sf.orcc.cache' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.cal' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.cal.impl' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.cal.util' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.parser.antlr' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.parser.antlr.internal' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.services' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.util' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.validation' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.frontend' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.formatting' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.scoping' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.generator' version='0.0.0'/>
+      <provided namespace='java.package' name='net.sf.orcc.cal.serializer' version='0.0.0'/>
+      <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='bundle' version='1.0.0'/>
+    </provides>
+    <requires size='18'>
+      <required namespace='osgi.bundle' name='net.sf.orcc.core' range='2.3.1'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext' range='2.15.0'/>
+      <required namespace='osgi.bundle' name='org.antlr.runtime' range='3.2.0'/>
+      <required namespace='osgi.bundle' name='org.apache.commons.logging' range='0.0.0' optional='true' greedy='false'/>
+      <required namespace='osgi.bundle' name='org.apache.commons.lang' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.resources' range='3.7.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.core.runtime' range='3.7.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.emf.common' range='2.7.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.emf.ecore' range='2.7.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.emf.mwe2.launch' range='2.0.0' optional='true' greedy='false'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.generator' range='2.0.0' optional='true' greedy='false'/>
+      <required namespace='osgi.bundle' name='org.eclipse.jdt.core' range='3.7.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.util' range='2.0.0'/>
+      <required namespace='osgi.bundle' name='org.objectweb.asm' range='5.0.1'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.xbase.lib' range='0.0.0'/>
+      <required namespace='osgi.bundle' name='org.eclipse.xtext.common.types' range='0.0.0'/>
+      <required namespace='java.package' name='org.apache.log4j' range='0.0.0'/>
+      <required namespace='java.package' name='org.eclipse.xtext.xbase.lib' range='0.0.0'/>
+    </requires>
+    <artifacts size='1'>
+      <artifact classifier='osgi.bundle' id='net.sf.orcc.cal' version='2.3.1.201906062042'/>
+    </artifacts>
+    <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+    <touchpointData size='1'>
+      <instructions size='1'>
+        <instruction key='manifest'>
+          Bundle-SymbolicName: net.sf.orcc.cal; singleton:=true&#xA;Bundle-Version: 2.3.1.201906062042&#xA;
+        </instruction>
+      </instructions>
+    </touchpointData>
+  </unit>
+</units>

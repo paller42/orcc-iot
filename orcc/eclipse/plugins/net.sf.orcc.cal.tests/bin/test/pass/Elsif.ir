@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net.sf.orcc.df:Actor xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:net.sf.orcc.df="http://orcc.sf.net/model/2011/Df" xmlns:net.sf.orcc.ir="http://orcc.sf.net/model/2011/Ir"
+    label="test.pass.Elsif" fileName="/net.sf.orcc.cal.tests/data-src/test/pass/Elsif.cal"
+    lineNumber="3">
+  <initializes>
+    <body lineNumber="5" name="untagged_0">
+      <blocks xsi:type="net.sf.orcc.ir:BlockIf" lineNumber="7">
+        <condition xsi:type="net.sf.orcc.ir:ExprBool"/>
+        <elseBlocks xsi:type="net.sf.orcc.ir:BlockIf" lineNumber="9">
+          <condition xsi:type="net.sf.orcc.ir:ExprBool"/>
+          <elseBlocks xsi:type="net.sf.orcc.ir:BlockIf" lineNumber="11">
+            <condition xsi:type="net.sf.orcc.ir:ExprBool" value="true"/>
+            <elseBlocks xsi:type="net.sf.orcc.ir:BlockBasic">
+              <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="14" procedure="#//@procs.0">
+                <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+                  <value xsi:type="net.sf.orcc.ir:ExprString" value="error3"/>
+                </arguments>
+              </instructions>
+            </elseBlocks>
+            <joinBlock/>
+            <thenBlocks xsi:type="net.sf.orcc.ir:BlockBasic">
+              <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="12" procedure="#//@procs.0">
+                <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+                  <value xsi:type="net.sf.orcc.ir:ExprString" value="ok"/>
+                </arguments>
+              </instructions>
+            </thenBlocks>
+          </elseBlocks>
+          <joinBlock/>
+          <thenBlocks xsi:type="net.sf.orcc.ir:BlockBasic">
+            <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="10" procedure="#//@procs.0">
+              <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+                <value xsi:type="net.sf.orcc.ir:ExprString" value="error2"/>
+              </arguments>
+            </instructions>
+          </thenBlocks>
+        </elseBlocks>
+        <joinBlock/>
+        <thenBlocks xsi:type="net.sf.orcc.ir:BlockBasic">
+          <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="8" procedure="#//@procs.0">
+            <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+              <value xsi:type="net.sf.orcc.ir:ExprString" value="error1"/>
+            </arguments>
+          </instructions>
+        </thenBlocks>
+      </blocks>
+      <blocks xsi:type="net.sf.orcc.ir:BlockIf" lineNumber="17">
+        <condition xsi:type="net.sf.orcc.ir:ExprBool"/>
+        <elseBlocks xsi:type="net.sf.orcc.ir:BlockIf" lineNumber="19">
+          <condition xsi:type="net.sf.orcc.ir:ExprBool"/>
+          <elseBlocks xsi:type="net.sf.orcc.ir:BlockIf" lineNumber="21">
+            <condition xsi:type="net.sf.orcc.ir:ExprBool"/>
+            <elseBlocks xsi:type="net.sf.orcc.ir:BlockBasic">
+              <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="24" procedure="#//@procs.0">
+                <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+                  <value xsi:type="net.sf.orcc.ir:ExprString" value="ok"/>
+                </arguments>
+              </instructions>
+            </elseBlocks>
+            <joinBlock/>
+            <thenBlocks xsi:type="net.sf.orcc.ir:BlockBasic">
+              <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="22" procedure="#//@procs.0">
+                <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+                  <value xsi:type="net.sf.orcc.ir:ExprString" value="error6"/>
+                </arguments>
+              </instructions>
+            </thenBlocks>
+          </elseBlocks>
+          <joinBlock/>
+          <thenBlocks xsi:type="net.sf.orcc.ir:BlockBasic">
+            <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="20" procedure="#//@procs.0">
+              <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+                <value xsi:type="net.sf.orcc.ir:ExprString" value="error5"/>
+              </arguments>
+            </instructions>
+          </thenBlocks>
+        </elseBlocks>
+        <joinBlock/>
+        <thenBlocks xsi:type="net.sf.orcc.ir:BlockBasic">
+          <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="18" procedure="#//@procs.0">
+            <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+              <value xsi:type="net.sf.orcc.ir:ExprString" value="error4"/>
+            </arguments>
+          </instructions>
+        </thenBlocks>
+      </blocks>
+      <blocks xsi:type="net.sf.orcc.ir:BlockBasic">
+        <instructions xsi:type="net.sf.orcc.ir:InstReturn"/>
+      </blocks>
+      <returnType xsi:type="net.sf.orcc.ir:TypeVoid"/>
+    </body>
+    <inputPattern/>
+    <outputPattern/>
+    <peekPattern/>
+    <scheduler lineNumber="5" name="isSchedulable_untagged_0">
+      <locals assignable="true" defs="#//@initializes.0/@scheduler/@blocks.0/@instructions.0/@target"
+          name="result" uses="#//@initializes.0/@scheduler/@blocks.0/@instructions.1/@value/@use">
+        <type xsi:type="net.sf.orcc.ir:TypeBool"/>
+      </locals>
+      <blocks xsi:type="net.sf.orcc.ir:BlockBasic">
+        <instructions xsi:type="net.sf.orcc.ir:InstAssign">
+          <target variable="#//@initializes.0/@scheduler/@locals.0"/>
+          <value xsi:type="net.sf.orcc.ir:ExprBool" value="true"/>
+        </instructions>
+        <instructions xsi:type="net.sf.orcc.ir:InstReturn">
+          <value xsi:type="net.sf.orcc.ir:ExprVar">
+            <use variable="#//@initializes.0/@scheduler/@locals.0"/>
+          </value>
+        </instructions>
+      </blocks>
+      <returnType xsi:type="net.sf.orcc.ir:TypeBool"/>
+    </scheduler>
+    <tag/>
+  </initializes>
+  <procs name="print" native="true">
+    <returnType xsi:type="net.sf.orcc.ir:TypeVoid"/>
+  </procs>
+</net.sf.orcc.df:Actor>

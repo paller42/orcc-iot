@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="net.sf.orcc.feature"
+      label="Orcc"
+      version="2.3.1.201906062042"
+      provider-name="IETR/INSA Rennes">
+
+   <description url="http://orcc.sf.net">
+      The Open RVC-CAL Compiler (Orcc) is a collection of support tools under BSD license created by IETR/INSA Rennes for the RVC-CAL dataflow programming language. Its primary purpose is to provide developers with a compiler infrastructure to allow several languages and combination of languages (in the case of co-design) to be generated from RVC-CAL actors and XDF networks.
+   </description>
+
+   <copyright>
+      Copyright (c) 2009-2012, IETR/INSA of Rennes
+Copyright (c) 2011-2012, IRISA
+Copyright (c) 2012, Synflow
+Copyright (c) 2009-2011, LEAD TECH DESIGN Rennes - France
+Copyright (c) 2009-2012, EPFL
+All rights reserved.
+   </copyright>
+
+   <license url="">
+      Copyright (c) 2009-2011, IETR/INSA of Rennes
+Copyright (c) 2009-2011, LEAD TECH DESIGN Rennes - France
+Copyright (c) 2009-2011, EPFL
+All rights reserved.
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+* Neither the name of the IETR/INSA of Rennes nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+   </license>
+
+   <url>
+      <update label="Open RVC-CAL Compiler - Stable releases" url="http://orcc.sourceforge.net/eclipse"/>
+      <discovery label="Eclipse Mars" url="http://download.eclipse.org/releases/mars"/>
+      <discovery label="Xtext and Xtend" url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+      <discovery label="Graphiti" url="http://download.eclipse.org/graphiti/updates/0.12.2/"/>
+   </url>
+
+   <requires>
+      <import plugin="net.sf.orcc.models" version="2.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.expressions" version="3.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jdt.core" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.xtend.lib" version="2.4.0" match="greaterOrEqual"/>
+      <import plugin="net.sf.orcc.core" version="2.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.xbase.lib" version="2.4.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.cli" version="1.2.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.lang" version="2.6.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext" version="2.12.0" match="greaterOrEqual"/>
+      <import plugin="org.antlr.runtime" version="3.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.common" version="2.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.util" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.objectweb.asm" version="5.0.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.common.types"/>
+      <import plugin="org.apache.log4j"/>
+      <import plugin="net.sf.orcc.cal" version="2.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.compare" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.editors" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.builder" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.common.types.ui" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.ui" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.ui.shared" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.lang" version="2.4.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.ui.codetemplates.ui"/>
+      <import plugin="com.google.guava"/>
+      <import plugin="net.sf.orcc.backends" version="2.3.1" match="greaterOrEqual"/>
+      <import plugin="net.sf.orcc.cal.ui" version="2.3.1" match="greaterOrEqual"/>
+      <import plugin="net.sf.orcc.simulators" version="2.3.1" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gef" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.views.properties.tabbed"/>
+      <import plugin="org.eclipse.debug.ui" version="3.7.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.console" version="3.5.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.workbench"/>
+      <import plugin="org.eclipse.graphiti"/>
+      <import plugin="org.eclipse.graphiti.ui"/>
+      <import plugin="org.eclipse.graphiti.pattern"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.emf.transaction"/>
+   </requires>
+
+   <plugin
+         id="net.sf.orcc.core"
+         download-size="649"
+         install-size="1543"
+         version="2.3.1.201906062042"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.orcc.backends"
+         download-size="3493"
+         install-size="11669"
+         version="2.3.1.201906062042"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.orcc.cal"
+         download-size="978"
+         install-size="2095"
+         version="2.3.1.201906062042"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.orcc.cal.ui"
+         download-size="225"
+         install-size="1053"
+         version="2.3.1.201906062042"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.orcc.simulators"
+         download-size="80"
+         install-size="139"
+         version="2.3.1.201906062042"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.orcc.ui"
+         download-size="134"
+         install-size="274"
+         version="2.3.1.201906062042"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.orcc.models"
+         download-size="64"
+         install-size="130"
+         version="2.3.1.201906062042"
+         unpack="false"/>
+
+   <plugin
+         id="net.sf.orcc.xdf.ui"
+         download-size="729"
+         install-size="962"
+         version="2.3.1.201906062042"
+         unpack="false"/>
+
+</feature>

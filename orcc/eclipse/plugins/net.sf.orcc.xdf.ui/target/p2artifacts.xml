@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<artifacts size='1'>
+  <artifact classifier='osgi.bundle' id='net.sf.orcc.xdf.ui' version='2.3.1.201906062042'>
+    <properties size='5'>
+      <property name='artifact.size' value='747011'/>
+      <property name='download.size' value='747011'/>
+      <property name='maven-groupId' value='net.sf.orcc'/>
+      <property name='maven-artifactId' value='net.sf.orcc.xdf.ui'/>
+      <property name='maven-version' value='2.3.1-SNAPSHOT'/>
+    </properties>
+  </artifact>
+</artifacts>
