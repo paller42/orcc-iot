@@ -4,6 +4,14 @@ Orcc-IoT is an adaptation of the [Open RVC-CAL Compiler](http://orcc.sourceforge
 [this paper](https://www.researchgate.net/publication/331319887_Dataflow-based_Heterogeneous_Code_Generator_for_IoT_Applications). This repository contains
 Orcc-IoT code, example projects and enough instructions to get you started.
 
+The rest of this document deals with the installation and basic configuration of Orcc-IoT. The following table links to additional documents that
+guide you in dataflow-based application design after you installed Orcc-IoT. 
+
+* [Basic Concepts in ORCC-IoT](BasicConcepts.md)
+* [Compile with ORCC-IoT](CompileWithORCC.md)
+* [Native Actors in ORCC-IoT](NativeActors.md)
+* [How to Implement the Native Actors](NativeActorImpl.md)
+
 # Prerequisites
 
 * [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
@@ -118,6 +126,12 @@ where <IP address> is the public IP address of the container instance you noted 
 
 If everything worked correctly, air_temp_0 instance sends data to the cloud instance and fan_power instance receives data from
 the cloud instance.
+
+## Additiona resources:
+1. [Basic concepts of ORCC-IoT](/public_site/md/BasicConcepts.md) 
+2. [Compile with ORCC-IoT](/public_site/md/CompileWithORCC.md)
+3. [Native Actors](/public_site/md/NativeActors.md)
+4. [Native Actor Implementation](/public_site/md/NativeActorImpl.md) 
 
 
 
