@@ -30,7 +30,7 @@ The *native* annotation will signal the backend that this actor does not need th
 its implementation (e.g. in .jar package). For this purpose, in the project root, create a new folder and name it *jars*. This is the folder 
 where the actor implementation will be placed.
 
-The project can be dowloaded from [here](/public_site/md/resources/NativeActorOddEven.zip). 
+The project can be dowloaded from [here](resources/NativeActorOddEven.zip). 
 
 ## The Implementation Project
 
@@ -105,7 +105,7 @@ public class OETest<T> implements IActor {
 ```
 Notice that this code can be seen as a *template* code for native actors. Also, notice that the OETest class implemetns IActor interface 
 and imports several other classess. To facilitate the implementation of the native actor, accompaning files are prepared in a project 
-which can be dowloaded from [here](/public_site/md/resources/NativeOETest.zip). To finalize the implementation and to create the package, 
+which can be dowloaded from [here](resources/NativeOETest.zip). To finalize the implementation and to create the package, 
 do the following: 
 
 1. Unpack and browse to root folder (NativeOETest). 
@@ -117,7 +117,7 @@ Once the step 4 is completed, the work on Native actor is done, thus it can be u
 
 ## Project for Testing
 
-To test this actor, a simple project is prepared and made available for [download](/public_site/md/resources/OddEven.zip). Import the project and 
-compile the network to see the results. If you are unfamiliar with how to include the native actors into your network, check [this](/public_site/md/NativeActors.md) 
+To test this actor, a simple project is prepared and made available for [download](resources/OddEven.zip). Import the project and 
+compile the network to see the results. If you are unfamiliar with how to include the native actors into your network, check [this](NativeActors.md) 
 tutorial before testing. 
 

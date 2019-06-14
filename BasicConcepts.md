@@ -6,13 +6,13 @@ Start the Eclipse that already has the ORCC-IoT plugin installed and follow thes
 1. File -> New -> Other 
 
 2. From the dialog box, select Orcc Project and hit Next.   
-![New Project][newPrj1]
+![New Project](imgs/cworcc/orccnewprj1.jpg)
 
 3. Provide the name of your project, e.g. orccProjectName     
-![New Project][newPrj2]
+![New Project](imgs/cworcc/orccnewprj2.jpg)
 
 Project Explorer should show the *orccProjectName* project and its content.     
-![New Project][newPrj3]
+![New Project](imgs/cworcc/orccnewprj3.jpg)
 
 Folder *src* is where actors, their packages and networks are stored. The azurecreds.properties file is
 where the credentials for the cloud are stored. Current implemetation of Java cloud generates the code and config files for Microsof Azure. If cloud backends are not used, this file should
@@ -26,7 +26,7 @@ can be compiled to .java code, while the remaining are compiled to C code. The j
 target platforms and deployed.  During the execution, java and c parts are fully aware of each other and able to communicate seamlesly. 
 Example network is presented i Figure 1. 
 
-![Example_network][ExampleNetworkHVAC]
+![Example_network](imgs/cworcc/hvacapp.jpg)
 
 ## Actor 
 Actor encapsulates a distinct part of the application's functionality. It can have input ports, through which it
@@ -43,7 +43,7 @@ As its name suggests, is an actor that is built from scratch by ORCC-IoT user to
 It is written in cal language, and compiled using the selected backends. The compilation network (of actors) results with software code
 (e.g. .java or .c units). This code is then compiled for, and deploy to target hardware platform.
 
-Here is a basic [tutorial](/public_site/md/CompileWithORCC.md) on how to create and compile the network with regural actors.  
+Here is a basic [tutorial](CompileWithORCC.md) on how to create and compile the network with regural actors.  
 
 
 ### 2. Native Actors
@@ -53,10 +53,4 @@ with other actors in the network via its input and output ports and to pass the 
 compilation of the ORCC-IoT network, native actors are not compiled as regular actors since they are accompanied wiht its executable
 version that is built it the IoT application that is being made.
 
-To learn more about native actors, see this [tutorial](/public_site/md/NativeActors.md). 
-
-[ExampleNetworkHVAC]: /public_site/md/imgs/cworcc/hvacapp.jpg
-[NativeActTutorial]: NativeActors.md
-[newPrj1]: /public_site/md/imgs/cworcc/orccnewprj1.jpg
-[newPrj2]: /public_site/md/imgs/cworcc/orccnewprj2.jpg
-[newPrj3]: /public_site/md/imgs/cworcc/orccnewprj3.jpg
+To learn more about native actors, see this [tutorial](NativeActors.md). 

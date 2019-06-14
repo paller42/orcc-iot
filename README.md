@@ -128,10 +128,10 @@ If everything worked correctly, air_temp_0 instance sends data to the cloud inst
 the cloud instance.
 
 ## Additiona resources:
-1. [Basic concepts of ORCC-IoT](/public_site/md/BasicConcepts.md) 
-2. [Compile with ORCC-IoT](/public_site/md/CompileWithORCC.md)
-3. [Native Actors](/public_site/md/NativeActors.md)
-4. [Native Actor Implementation](/public_site/md/NativeActorImpl.md) 
+1. [Basic concepts of ORCC-IoT](BasicConcepts.md) 
+2. [Compile with ORCC-IoT](CompileWithORCC.md)
+3. [Native Actors](NativeActors.md)
+4. [Native Actor Implementation](NativeActorImpl.md) 
 
 
 

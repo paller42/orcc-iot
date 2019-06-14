@@ -3,16 +3,16 @@
 This tutorial will demonstrate how to make a simple ORCC-IoT application. 
 
 **First step** is to create the ORCC project. If you are unfamiliar wiht this, follow the 
-steps described in [BasicConcept](/public_site/md/BasicConcepts.md) page. 
+steps described in [BasicConcept](BasicConcepts.md) page. 
 
 **Second step** is to create the network. The easiest way to do this is to right click on *orccProjectName* folder
 and slelect new -> Other. From the folder list, select Orcc and then XDF Network, as presented in Figure 1. Hit *Next* when done...
 
-![CompileWithOrcc][newNet1] 
+![CompileWithOrcc](imgs/cworcc/xdfNetworkjpg.jpg) 
 
 Provide a name for the network and klick *Finish*. Make sure that the *src* folder is selected, otherwise you will not be able to progress. 
 
-![CompileWithOrcc][newNet2] 
+![CompileWithOrcc](imgs/cworcc/xdfNetworkName.jpg)
 
 **Third step** is to create actors. Each actor in the network is instantiated from the .cal unit. Cal files are organizied in packages
 just as .java units are. To create a package, right click on *src* folder and select new -> package. Then provide the name 
@@ -81,7 +81,7 @@ thus it is represented wiht brown colour, withouth input or output ports.
 To relate the actor with .cal, right click and select  *Set/Update refinement* 
 and select the .cal unit.  
 
-![CompileWithOrcc][newNet3]
+![CompileWithOrcc](imgs/cworcc/xdfNetworkUpdREf.jpg)
 
 The actor is now presented with blue colour and has its input and output ports. 
 Keep in mind that several actor instances from the same .cal unit can be droped on a same network. 
@@ -90,7 +90,7 @@ Next, drop the third actor on the canvas and use the *Connection* from the palet
 connect inputs and outputs. Rename the actor instances to *ProviderInst*, *CalculatorInst* *PresenterInst*. 
 Network should look as in the following picture. 
 
-![CompileWithOrcc][newNet5]
+![CompileWithOrcc](imgs/cworcc/xdfNetworkParam.jpg)
 
 Note that CalculatorInst actor receives an argument. To edit the argument's default value
 slect the actor, and click on properties tab and click on *Arguments*. The argument and 
@@ -143,7 +143,7 @@ Keep in mind that if one of your backend is Java-Spring, the azurecreeds.propert
 Otherwise the generation of queues and deployment will fail. To compile the network, in Project explorer, right click on 
 the network file (e.g. MyNetwork.xdf) and select RunAs -> Run Configuration. The following window will open:  
 
-![CompileWithOrcc][newNet4]
+![CompileWithOrcc](imgs/cworcc/xdfNetworkCompile.jpg)
 
 Set the following options:
  
@@ -194,11 +194,4 @@ The producer actor will generate several integer values and send them to calcula
 an addition wiht the parameter value (param is set to 1 in step five). The result is sent to output queue and then to presenter actor. The presenter
 actor receives the value and prints its value on the screen.  
 
-The entire project used in this example can be downloaded from [here](/public_site/md/resources/orccProjectName.zip).
-
-
-[newNet1]: /public_site/md/imgs/cworcc/xdfNetworkjpg.jpg
-[newNet2]: /public_site/md/imgs/cworcc/xdfNetworkName.jpg
-[newNet3]: /public_site/md/imgs/cworcc/xdfNetworkUpdREf.jpg
-[newNet4]: /public_site/md/imgs/cworcc/xdfNetworkCompile.jpg
-[newNet5]: /public_site/md/imgs/cworcc/xdfNetworkParam.jpg
+The entire project used in this example can be downloaded from [here](resources/orccProjectName.zip).

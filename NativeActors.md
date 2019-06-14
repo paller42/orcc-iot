@@ -6,7 +6,7 @@ into workspace. Navigate to the root directory of the native actor project and c
 
 Throughout this tutuorial, a native actor for storing values into database will be used.  This native actor has the following structure: 
 
-![NativeActor][NatAct1]
+![NativeActor](imgs/nativeactors/prjStruct.jpg)
 
 The project contains four actors, represented with their .cal units. Each actor receives the value of different type and stores it into the database. For example, 
 to store the integer values, NDBActorInt should be used in the network, For storing strings, NDBActorStr and for float data type, NDBActorFlt. 
@@ -48,16 +48,12 @@ To use the native actor, create the new ORCC project and set the build path to r
 1. Right click on the newly created project and go to Build path -> configure Build path 
 2. Click on Add button -> tick the box next to the native actor project -> click OK -> click Apply and Close. 
 
-![NativeActor][NatAct2]
+![NativeActor](imgs/nativeactors/buildPath.jpg)
 
 Once the build path is configured, the native actor can be used in the network it the same way how regular actors are used - e.g. drag&drop from project explorer
 to network canvas. 
 
 The native actor used in this example can be downloaded from [here](resources/NativeActorDBAccess.zip).
 Note that this native actor is missing the actual implemetation, that is the .jar package. 
-To implement the native actor, follow [this](/public_site/md/NativeActorImpl.md) tutorial. 
-
-
-[NatAct1]: /public_site/md/imgs/nativeactors/prjStruct.jpg
-[NatAct2]: /public_site/md/imgs/nativeactors/buildPath.jpg
+To implement the native actor, follow [this](NativeActorImpl.md) tutorial. 
 
