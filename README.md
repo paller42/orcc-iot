@@ -51,7 +51,7 @@ The project provided the following code generators suitable for IoT implementati
 
 * C code generator that creates code with Linux library dependencies
 * Plain Java code generator suitable for edge devices
-* Java code generator with [Spring](https://spring.io/) flavour supporting Azure cloud deployment suitable for server functionality
+* Java code generator with [Spring](https://spring.io/) flavor supporting Azure cloud deployment suitable for server functionality
 
 ## Configuring the Azure deployment
 
@@ -127,11 +127,10 @@ where <IP address> is the public IP address of the container instance you noted 
 If everything worked correctly, air_temp_0 instance sends data to the cloud instance and fan_power instance receives data from
 the cloud instance.
 
-## Additiona resources:
+## Additional resources:
 1. [Basic concepts of ORCC-IoT](BasicConcepts.md) 
 2. [Compile with ORCC-IoT](CompileWithORCC.md)
 3. [Native Actors](NativeActors.md)
 4. [Native Actor Implementation](NativeActorImpl.md) 
-
 
 
