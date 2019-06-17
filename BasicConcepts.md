@@ -26,8 +26,6 @@ Heterogeneous IoT backend allows developers to group the actors in partitions an
 
 Partitions for Heterogeneous IoT backend are defined using especial XML-based syntax that is explained in [this](https://www.researchgate.net/publication/331319887_Dataflow-based_Heterogeneous_Code_Generator_for_IoT_Applications) publication. 
 
-ORCC-IoT 
-
 ## Network
 IoT applications are represented as a data-flow networks in ORCC-IoT. These networks consist of one or more 
 interconnected actors, each representing a distinct parts of the IoT application. Once finalized, these networks are compiled by ORCC-IoT resulting with concrete source code. For example, during the compilation several actors from the network 
