@@ -11,6 +11,7 @@ guide you in dataflow-based application design after you installed Orcc-IoT.
 * [Compile with ORCC-IoT](CompileWithORCC.md)
 * [Native Actors in ORCC-IoT](NativeActors.md)
 * [How to Implement the Native Actors](NativeActorImpl.md)
+* [Native actor in C language](NativeActorInC.md)
 
 # Prerequisites
 
@@ -111,6 +112,7 @@ Now enter both the fan_power and the air_temp_0 subdirectories and compile the C
 Prerequisites:
 
 * [libwebsockets](https://libwebsockets.org/)
+* [cjson](https://github.com/DaveGamble/cJSON)
 
 `cmake .`
 
