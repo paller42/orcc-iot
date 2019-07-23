@@ -39,7 +39,7 @@ with the installation using the Install new software wizard.
 In Eclipse, click File/Import/Existing Projects into Workspace. Click the Select root directory option then select the examples/xcf/ahu-simple directory.
 Import the project in that directory then go into the src folder of the project and open HVACExample-simple.xdfdiag. You should see something like this:
 
-![example-network](imgs/example-network.jpg)
+![example-network](imgs/cworcc/example-network.jpg)
 
 # Generating and running example code
 
@@ -89,7 +89,7 @@ Let's see an example that exercises the C and the Spring/Java code generator.
 Right-click on str_ahu_c.xcf in the example project and click on Run as/Run configurations. Fill the dialog like the following 
 (use an output folder that suits your directory structure).
 
-![run-configurations](imgs/run-configurations.jpg)
+![run-configurations](imgs/cworcc/run-configurations.jpg)
 
 Click on the Run button and the IoT compiler will invoke the C backend twice and the Spring/Java code generator once and will
 generate 3 software projects under the output folder's partitions subdirectory.
