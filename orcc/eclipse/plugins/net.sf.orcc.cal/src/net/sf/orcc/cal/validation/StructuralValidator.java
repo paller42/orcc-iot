@@ -95,6 +95,7 @@ import org.jgrapht.graph.DefaultEdge;
  * file is saved and before code generation.
  * 
  * @author Matthieu Wipliez
+ * @author Taušan Nebojša
  * 
  */
 public class StructuralValidator extends AbstractCalValidator {

@@ -62,7 +62,7 @@ public class InstanceArgumentsSection extends AbstractTableBasedSection {
 	 * Define the dialog used to edit an instance argument.
 	 * 
 	 * @author Antoine Lorence
-	 * 
+	 * @author Taušan Nebojša
 	 */
 	
 	//=============================================================================================

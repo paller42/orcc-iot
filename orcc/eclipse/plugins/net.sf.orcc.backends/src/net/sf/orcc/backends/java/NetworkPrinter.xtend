@@ -37,6 +37,7 @@ import net.sf.orcc.df.Actor
  * Compile Top_network Java source code 
  *  
  * @author Antoine Lorence
+ * @author Taušan Nebojša
  * 
  */
 class NetworkPrinter extends JavaTemplate {

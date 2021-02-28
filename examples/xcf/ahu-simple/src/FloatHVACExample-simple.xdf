@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XDF name="FloatHVACExample-simple">
+    <Instance id="flt_return_air_temperature">
+        <Class name="ahu.FloatBACNetInput"/>
+    </Instance>
+    <Instance id="flt_pid_controller">
+        <Class name="ahu.FloatProcessor"/>
+    </Instance>
+    <Instance id="flt_power_attenuator">
+        <Class name="ahu.FloatProcessor"/>
+    </Instance>
+    <Instance id="flt_supply_fan_power">
+        <Class name="ahu.FloatBACNetOutput"/>
+    </Instance>
+    <Connection dst="flt_pid_controller" dst-port="I"
+        src="flt_return_air_temperature" src-port="O"/>
+    <Connection dst="flt_power_attenuator" dst-port="I"
+        src="flt_pid_controller" src-port="O"/>
+    <Connection dst="flt_supply_fan_power" dst-port="I"
+        src="flt_power_attenuator" src-port="O"/>
+</XDF>

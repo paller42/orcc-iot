@@ -61,7 +61,7 @@ import org.eclipse.jface.dialogs.Dialog;
  * the entity (Actor or Network) contained by an instance.
  * 
  * @author Antoine Lorence
- * 
+ * @author Taušan Nebojša
  */
 public class UpdateRefinementFeature extends AbstractCustomFeature {
 

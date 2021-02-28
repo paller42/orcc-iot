@@ -56,6 +56,7 @@ import net.sf.orcc.ir.Expression
  * Default Java Printer
  *  
  * @author Antoine Lorence
+ * @author Taušan Nebojša
  * 
  */
 abstract class JavaTemplate extends CommonPrinter {

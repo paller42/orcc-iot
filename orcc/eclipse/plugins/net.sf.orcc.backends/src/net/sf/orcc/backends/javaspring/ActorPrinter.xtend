@@ -56,6 +56,9 @@ import net.sf.orcc.df.Network
  * Compile Top_network Java source code 
  *  
  * @author Antoine Lorence
+ * @author Bezati Endri	
+ * @author Paller Gábor  	
+ * @author Taušan Nebojša
  * 
  */
 class ActorPrinter extends JavaSpringTemplate {

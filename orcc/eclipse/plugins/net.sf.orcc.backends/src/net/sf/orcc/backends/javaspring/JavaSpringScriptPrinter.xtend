@@ -1,9 +1,36 @@
- /*
- * Copyright (c) 2012, 
- * Nebojša Taušan, Gabor Paller, Gabor Farkas, Endri Bezati 
+/*
+ * Copyright (c) 2019, IoT Researchers 
+ * @author Bezati Endri	
+ * @author Paller Gábor  	
+ * @author Taušan Nebojša
+ *
  * All rights reserved.
  * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ * 
+ *   * Redistributions of source code must retain the above copyright notice,
+ *     this list of conditions and the following disclaimer.
+ *   * Redistributions in binary form must reproduce the above copyright notice,
+ *     this list of conditions and the following disclaimer in the documentation
+ *     and/or other materials provided with the distribution.
+ *   * Neither the names of the IoT Researchers nor the names of its
+ *     contributors may be used to endorse or promote products derived from this
+ *     software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+ * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
  */
+ 
 
 package net.sf.orcc.backends.javaspring
 
@@ -19,15 +46,18 @@ import java.util.HashSet
 	 * 
 	 * getPomXMLContent() generates the pom.xml which enables the compilation of generated Java Spring sources with Maven
 	 * getSpringStarterFileContent() 	generates the content of the Spring starter class
-	 * getJSONtokenFileContent()  generates the JSON representation of the token. // Not used any more, java files are in runtime folder
 	 * getQueueConfig()  generates configuration file for Spring boot queue class
 	 * getQueueFileContent() generates the queue class for each port in the network
 	 * getAzureProperties() generates the azure.properties file that is referenced from pom.xml
+	 * getJMSProperties() generates the JMS configuration file 
 	 * getSSHDConfig()     generates configuration script for SSHD for docker image 
 	 * getInit()		generates initialization script that will start the application in cloud
 	 * getDockerFile(String jarName) generates the Dockerfile for building docker image
 	 * getWebSocketConfig(String networkName) generates the Web socket configuration class
 	 * getSocketHandler(String networkName) generates the socket handler class
+	 * getIDBRepository(String networkName)	generates the Interface class for Mongo DB
+	 * getDBRepository(String networkName)	generates the repository class for Mongo DB
+	 * getSpringAppProperties()	generates the Spring app configuration file
 	 */
 
 class JavaSpringScriptPrinter extends JavaScriptPrinter{

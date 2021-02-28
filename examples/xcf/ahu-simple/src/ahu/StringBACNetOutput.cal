@@ -1,0 +1,13 @@
+package ahu;
+
+actor StringBACNetOutput() String InpStr ==> :
+
+	uint counter := 0;
+
+	m: action InpStr:[ v1 ] ==>
+	do
+		println("StringBACNetOutput (" + counter + "): " + v1);
+		counter := counter + 1;
+	end
+
+end

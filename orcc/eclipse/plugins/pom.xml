@@ -9,8 +9,8 @@
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<xtend-version>2.15.0</xtend-version>
-		<tycho-version>0.26.0</tycho-version>
+        <xtend-version>2.24.0</xtend-version>
+        <tycho-version>2.1.0</tycho-version>
 
 	</properties>
 
@@ -18,13 +18,23 @@
 		<repository>
 			<id>eclipse</id>
 			<layout>p2</layout>
-			<url>https://download.eclipse.org/releases/2019-03/201903201000</url>
+            <url>http://download.eclipse.org/releases/2020-12</url>
 		</repository>
 		<repository>
 			<id>xtext</id>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.15.0/</url>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.24.0</url>
 		</repository>
+		<repository>
+			<id>orbit</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20201130205003/repository</url>
+        </repository>
+		<repository>
+			<id>emf</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/modeling/emf/emf/builds/release/2.24</url>
+        </repository>
 	</repositories>
 
 	<dependencies>

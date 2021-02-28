@@ -1,0 +1,13 @@
+package ahu;
+
+actor TwoInput() int I1, int I2 ==> int O :
+
+	uint counter := 0;
+
+	m: action I1:[ v1 ], I2:[ v2 ] ==> O:[v1+v2]
+	do
+		println("Merger ("+counter+"): " + v1 + "; " + v2);
+		counter := counter + 1;
+	end
+
+end

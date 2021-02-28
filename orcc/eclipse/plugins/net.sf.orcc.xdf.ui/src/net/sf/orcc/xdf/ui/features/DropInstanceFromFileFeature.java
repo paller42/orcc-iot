@@ -66,7 +66,7 @@ import org.eclipse.jface.dialogs.MessageDialog;
  * name to give to the instance newly created.
  * 
  * @author Antoine Lorence
- * 
+ * @author Taušan Nebojša
  */
 public class DropInstanceFromFileFeature extends AbstractAddFeature  {
 

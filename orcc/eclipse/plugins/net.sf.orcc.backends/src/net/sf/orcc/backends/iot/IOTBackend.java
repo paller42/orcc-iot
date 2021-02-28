@@ -1,5 +1,9 @@
 /*
- * Copyright (c) 2012, IETR/INSA of Rennes
+ * Copyright (c) 2019, IoT Researchers 
+ * @author Bezati Endri	
+ * @author Paller Gábor  	
+ * @author Taušan Nebojša
+ *
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -10,7 +14,7 @@
  *   * Redistributions in binary form must reproduce the above copyright notice,
  *     this list of conditions and the following disclaimer in the documentation
  *     and/or other materials provided with the distribution.
- *   * Neither the name of the IETR/INSA of Rennes nor the names of its
+ *   * Neither the names of the IoT Researchers nor the names of its
  *     contributors may be used to endorse or promote products derived from this
  *     software without specific prior written permission.
  * 
@@ -26,6 +30,7 @@
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
+
 package net.sf.orcc.backends.iot;
 
 import static net.sf.orcc.OrccLaunchConstants.DEBUG_MODE;
@@ -184,8 +189,10 @@ public class IOTBackend extends AbstractHeterogeneousBackend {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				throw new OrccRuntimeException( "XCFManager: "+e.getMessage() );
 			}
 		
+			OrccLogger.traceln("XCF loaded");
 			String networkName = xcf.getNetwork().getQualifiedId();
 			OrccLogger.traceln("Network name: "+networkName);
 			final Network network;

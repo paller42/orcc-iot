@@ -1,0 +1,13 @@
+package ahu;
+
+actor FloatBACNetInput () ==> float O:
+
+	float counter := 0.0;
+
+	p: action  ==> O:[counter]
+	do
+		println("Producer (" + counter+")");
+		counter := counter + 1.1;
+	end
+
+end

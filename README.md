@@ -16,12 +16,12 @@ guide you in dataflow-based application design after you installed Orcc-IoT.
 
 # Prerequisites
 
-* [JDK 1.8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+* [JDK 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 * [Maven 3.5.8](https://maven.apache.org/download.cgi)
-* [Eclipse 2019-03](https://www.eclipse.org/downloads/packages/release/2019-03/r)
+* [Eclipse 2020-12](https://www.eclipse.org/downloads/packages/release/2020-12/r)
 
 Note that Orcc-IoT was successfully deployed on different versions of Eclipse but a new Eclipse release normally requires recompilation. In order to adapt to
-a different Eclipse version, edit `orcc/eclipse/plugins/pom.xml` and update this line `<url>https://download.eclipse.org/releases/2019-03/201903201000</url>`
+a different Eclipse version, edit `orcc/eclipse/plugins/pom.xml` and update this line `<url>http://download.eclipse.org/releases/2020-12</url>`
 with the P2 repository of the Eclipse version in question.
 
 # Compile & install
@@ -77,7 +77,8 @@ Then edit the scripts/azure_create_acr.sh shell script and replace the configura
 `./azure_create_acr.sh`
 
 This will create the artifacts in the Azure cloud that the Spring/Java code generator relies on. The script also dumps
-keys and connection strings that you have to insert into your version of azurecreds.properties.
+keys and connection strings that you have to insert into your version of azurecreds.properties. Make sure that you use
+URL escaping in case of special characters ('/', etc.) when inserting keys to URIs like ampqs:// or mongodb://.
 
 ## Generating the code
 

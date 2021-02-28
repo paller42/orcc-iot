@@ -1,0 +1,13 @@
+package ahu;
+
+actor FloatProcessor() float I ==> float O :
+
+	uint counter := 0;
+
+	m: action I:[ v ] ==> O:[v*2]
+	do
+		println("Processor ("+counter+"): " + v);
+		counter := counter + 1;
+	end
+
+end

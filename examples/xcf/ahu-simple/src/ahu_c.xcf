@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Network file-format="xdf" qualified-id="HVACExample-simple"/>
+    <Partitioning>
+        <Partition id="server_0" pe="x86_0" backend-id="Java Server" host="intel_server">
+            <Instance id="pid_controller"/>
+            <Instance id="power_attenuator"/>
+        </Partition>
+        <Partition id="air_temp_0" pe="ARM" backend-id="Embedded Computer 1">
+            <Instance id="return_air_temperature"/>
+        </Partition>
+        <Partition id="fan_power" pe="ARM" backend-id="Embedded Computer 2">
+            <Instance id="supply_fan_power"/>
+        </Partition>
+    </Partitioning>
+    <Backends>
+        <Backend id="Java Server" backend="Java-Spring"/>
+        <Backend id="Embedded Computer 1" backend="C">
+            <Parameter key="Board" value="Beaglebone Black"/>
+        </Backend>
+        <Backend id="Embedded Computer 2" backend="C">
+            <Parameter key="Board" value="Beaglebone Black"/>
+        </Backend>
+    </Backends>
+    <Media>
+        <Interface id="wan" medium="cloud-server">
+            <Parameter key="ws-endpoint-uri" value="ws://51.19.32.48/iopod"/>
+        </Interface>
+    </Media>
+    <Connections>
+        <Fifo-Connection src="return_air_temperature" src-port="O" dst="pid_controller" dst-port="I1" size="512" medium-id="cloud-server"/>
+        <Fifo-Connection src="power_attenuator" src-port="O" dst="supply_fan_power" dst-port="I" size="512" medium-id="cloud-server"/>
+    </Connections>
+
+</Configuration>

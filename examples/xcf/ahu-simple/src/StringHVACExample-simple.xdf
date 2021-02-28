@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XDF name="StringHVACExample-simple">
+    <Instance id="str_return_air_temperature">
+        <Class name="ahu.StringBACNetInput"/>
+    </Instance>
+    <Instance id="str_pid_controller">
+        <Class name="ahu.StringProcessor"/>
+    </Instance>
+    <Instance id="str_power_attenuator">
+        <Class name="ahu.StringProcessor"/>
+    </Instance>
+    <Instance id="str_supply_fan_power">
+        <Class name="ahu.StringBACNetOutput"/>
+    </Instance>
+    <Connection dst="str_pid_controller" dst-port="I"
+        src="str_return_air_temperature" src-port="O"/>
+    <Connection dst="str_power_attenuator" dst-port="I"
+        src="str_pid_controller" src-port="O"/>
+    <Connection dst="str_supply_fan_power" dst-port="InpStr"
+        src="str_power_attenuator" src-port="O"/>
+</XDF>

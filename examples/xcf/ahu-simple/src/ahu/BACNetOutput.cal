@@ -1,0 +1,13 @@
+package ahu;
+
+actor BACNetOutput() int I ==> :
+
+	uint counter := 0;
+
+	m: action I:[ v1 ] ==>
+	do
+		println("BACNetOutput (" + counter + "): " + v1);
+		counter := counter + 1;
+	end
+
+end

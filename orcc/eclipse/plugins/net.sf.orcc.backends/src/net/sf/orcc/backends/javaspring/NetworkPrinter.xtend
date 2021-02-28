@@ -1,5 +1,9 @@
 /*
- * Copyright (c) 2012, IETR/INSA of Rennes
+ * Copyright (c) 2019, IoT Researchers 
+ * @author Bezati Endri	
+ * @author Paller Gábor  	
+ * @author Taušan Nebojša
+ *
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without
@@ -10,10 +14,10 @@
  *   * Redistributions in binary form must reproduce the above copyright notice,
  *     this list of conditions and the following disclaimer in the documentation
  *     and/or other materials provided with the distribution.
- *   * Neither the name of the IETR/INSA of Rennes nor the names of its
+ *   * Neither the names of the IoT Researchers nor the names of its
  *     contributors may be used to endorse or promote products derived from this
  *     software without specific prior written permission.
- * about
+ * 
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -36,13 +40,15 @@ import net.sf.orcc.util.FilesManager;
 import net.sf.orcc.util.Result;
 import java.util.HashMap;
 import net.sf.orcc.df.Actor
-import java.util.ArrayList
 
 
 /*
- * Compile Top_network Java source code 
+ * Compile Top_network Java Spring source code 
  *  
  * @author Antoine Lorence
+ * @author Bezati Endri	
+ * @author Paller Gábor  	
+ * @author Taušan Nebojša
  * 
  */
 class NetworkPrinter extends JavaSpringTemplate {

@@ -1,0 +1,13 @@
+package ahu;
+
+actor StringProcessor() String I ==> String O :
+
+	uint counter := 0;
+
+	m: action I:[ v ] ==> O:[v+""+counter]
+	do
+		println("Processor ("+counter+"): " + v);
+		counter := counter + 1;
+	end
+
+end

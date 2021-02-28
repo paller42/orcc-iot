@@ -1,0 +1,13 @@
+package ahu;
+
+actor FloatBACNetOutput() float I ==> :
+
+	uint counter := 0;
+
+	m: action I:[ v1 ] ==>
+	do
+		println("FloatBACNetOutput (" + counter + "): " + v1);
+		counter := counter + 1;
+	end
+
+end

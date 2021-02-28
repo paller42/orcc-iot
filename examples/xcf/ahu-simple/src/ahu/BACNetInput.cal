@@ -1,0 +1,13 @@
+package ahu;
+
+actor BACNetInput () ==> int O:
+
+	uint counter := 0;
+
+	p: action  ==> O:[counter]
+	do
+		println("Producer (" + counter+")");
+		counter := counter + 1;
+	end
+
+end

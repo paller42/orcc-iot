@@ -51,6 +51,7 @@ import org.eclipse.xtext.ui.XtextProjectHelper;
  * This class provides a wizard to create a new Orcc project.
  * 
  * @author Matthieu Wipliez
+ * @author Taušan Nebojša  
  */
 public class OrccProjectWizard extends BasicNewProjectResourceWizard {
 

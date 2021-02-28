@@ -82,7 +82,7 @@ import org.eclipse.ui.PlatformUI;
  * selected instances by a new one, refined on the network created.
  * 
  * @author Antoine Lorence
- * 
+ * @author Taušan Nebojša
  */
 public class GroupInstancesFeature extends AbstractTimeConsumingCustomFeature {
 

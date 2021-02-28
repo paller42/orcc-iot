@@ -1,0 +1,15 @@
+package ahu;
+
+actor StringBACNetInput () ==> String O:
+
+	String counterStr := "Ctr: 0";
+	int counter := 0;
+
+	p: action  ==> O:[counterStr]
+	do
+		println("Producer (" + counterStr +")");
+		counter := counter + 1;
+		counterStr := "Ctr: "+counter;
+	end
+
+end
