@@ -30,7 +30,7 @@
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-package net.sf.orcc.backends.javaspring;
+package hu.sze.orcciot.backends.javaspring;
 
 import static net.sf.orcc.backends.BackendsConstants.BXDF_FILE;
 import static net.sf.orcc.backends.BackendsConstants.IMPORT_BXDF;
@@ -51,7 +51,6 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.CoreException;
 
 import net.sf.orcc.OrccRuntimeException;
-import net.sf.orcc.backends.java.JavaBackend;
 import net.sf.orcc.backends.transform.DisconnectedOutputPortRemoval;
 import net.sf.orcc.df.Instance;
 import net.sf.orcc.df.Network;
@@ -161,7 +160,7 @@ public class JavaSpringBackend extends JavaBackend {
 		azure_amqp_uri = azureCredsProps.getProperty( "azure.amqp.uri" );
 		if( azure_amqp_uri == null )
 				throw new OrccRuntimeException(
-					"azure.amqp.uri property missing");
+					"azure_amqp_uri property missing");
 		
 		azure_db_name= azureCredsProps.getProperty( "azure.db.name" );
 		if( azure_db_name == null )
@@ -212,9 +211,9 @@ public class JavaSpringBackend extends JavaBackend {
 	protected Result doLibrariesExtraction() {
 		final Result result = Result.newInstance();
 
-		result.merge(FilesManager.extract("/runtime/SpringJava/src/ch", srcPath));
-		result.merge(FilesManager.extract("/runtime/SpringJava/src/net", srcPath));
-		result.merge(FilesManager.extract("/runtime/SpringJava/src/std", srcPath));
+		result.merge(FilesManager.extract("/runtime/SpringJava-GSMAdapter/src/ch", srcPath));
+		result.merge(FilesManager.extract("/runtime/SpringJava-GSMAdapter/src/net", srcPath));
+		result.merge(FilesManager.extract("/runtime/SpringJava-GSMAdapter/src/std", srcPath));
 
 		OrccLogger.traceln("Export runtime into " + srcPath + "... ");
 		return result;
@@ -268,13 +267,12 @@ public class JavaSpringBackend extends JavaBackend {
 		
 		//top path
 		result.merge(FilesManager.writeFile(javaScriptsPrinter.getSpringStarterFileContent(), topPath, "Starter.java"));
-		result.merge(FilesManager.writeFile(javaScriptsPrinter.getWebSocketConfig(networkSimpleName), topPath, "WebSocketConfig.java"));
-		result.merge(FilesManager.writeFile(javaScriptsPrinter.getSocketHandler(networkSimpleName,networkPrinter.getMapOfPortNames() ), topPath, "SocketHandler.java"));
 		
 		//output path
 		result.merge(FilesManager.writeFile(javaScriptsPrinter.getProjectFileContent(), outputPath, ".project"));
 		result.merge(FilesManager.writeFile(javaScriptsPrinter.getClasspathFileContent(), outputPath, ".classpath"));
-		result.merge(FilesManager.writeFile(javaScriptsPrinter.getPomXMLContent(networkPrinter.getMapOfPortNames(), project.getName()), outputPath, "pom.xml"));
+		result.merge(FilesManager.writeFile(javaScriptsPrinter.getPomXMLContent(
+                networkPrinter.getMapOfInputPortNames(), project.getName()), outputPath, "pom.xml"));
 		result.merge(FilesManager.writeFile(javaScriptsPrinter.getAzureProperties(), outputPath, "azure.properties"));
 		result.merge(FilesManager.writeFile(javaScriptsPrinter.getDockerFile(project.getName() +"_"+ networkSimpleName+"-1.0-SNAPSHOT.jar"), outputPath, "Dockerfile"));
 		

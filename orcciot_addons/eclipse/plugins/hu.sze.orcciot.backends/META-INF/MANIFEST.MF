@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Orcc IoT extension plug-in
+Bundle-SymbolicName: hu.sze.orcciot.backends;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-Vendor: IETR/INSA Rennes
+Require-Bundle: net.sf.orcc.core;bundle-version="2.3.1",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.4.0",
+ org.apache.commons.cli;bundle-version="1.2.0",
+ org.apache.commons.lang;bundle-version="2.6.0",
+ net.sf.orcc.backends;bundle-version="2.3.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Activator: hu.sze.orcciot.backends.Activator
+Import-Package: net.sf.orcc.backends,
+  net.sf.orcc.backends.transform,
+  net.sf.orcc.df,
+  net.sf.orcc.ir,
+  net.sf.orcc.util,
+  net.sf.orcc.util.util
+Export-Package: hu.sze.orcciot.backends.c.STM32F4,
+ hu.sze.orcciot.backends.javaspring
+Automatic-Module-Name: hu.sze.orcciot.backends

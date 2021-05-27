@@ -1,0 +1,9 @@
+package pole;
+
+actor sink_meas() String meas_str ==>  :
+	p: action meas_str:[m] ==> 
+	do
+			println("Measurement string: "+m);
+	end
+
+end

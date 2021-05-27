@@ -1,0 +1,14 @@
+package pole;
+
+actor trigger ()  ==> bool trigger :
+    @native procedure FW_native_delay( int(size=32) delay ) end
+	p: action ==> trigger:[trigger]
+	var
+		bool trigger
+	do
+		println( "Delay starts");
+		FW_native_delay( 10 );	// approximately 10 sec delay in powerdown mode
+		println( "Delay ends");
+		trigger := true;
+	end
+end

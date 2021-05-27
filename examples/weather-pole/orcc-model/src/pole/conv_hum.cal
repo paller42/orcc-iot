@@ -1,0 +1,43 @@
+package pole;
+
+actor conv_hum() int(size=32) raw_hum, int(size=32) t_fine  ==> float hum :
+	@native function BME280_native_get_dig_H1() --> uint(size=32) end
+	@native function BME280_native_get_dig_H2() --> int(size=32) end
+	@native function BME280_native_get_dig_H3() --> uint(size=32) end
+	@native function BME280_native_get_dig_H4() --> int(size=32) end
+	@native function BME280_native_get_dig_H5() --> int(size=32) end
+	@native function BME280_native_get_dig_H6() --> int(size=32) end
+
+	p: action raw_hum:[adc_H],t_fine:[t_fine] ==> hum:[h]
+	var
+		float h,
+		uint(size=32) dig_H1,
+		int(size=32) dig_H2,
+		uint(size=32) dig_H3,
+		int(size=32) dig_H4,
+		int(size=32) dig_H5,
+		int(size=32) dig_H6,
+		int(size=32) v_x1_u32r
+	do
+		dig_H1 := BME280_native_get_dig_H1();
+		dig_H2 := BME280_native_get_dig_H2();
+		dig_H3 := BME280_native_get_dig_H3();
+		dig_H4 := BME280_native_get_dig_H4();
+		dig_H5 := BME280_native_get_dig_H5();
+		dig_H6 := BME280_native_get_dig_H6();
+		v_x1_u32r := t_fine - 76800;
+		v_x1_u32r := (((((adc_H << 14) - (dig_H4 << 20) - (dig_H5 * v_x1_u32r)) +16384) >> 15) * (((((((v_x1_u32r * dig_H6) >> 10) * 
+			(((v_x1_u32r * dig_H3) >> 11) + 32768)) >> 10) + 2097152) * dig_H2 + 8192) >> 14));
+		v_x1_u32r := (v_x1_u32r - (((((v_x1_u32r >> 15) * (v_x1_u32r >> 15)) >> 7) * dig_H1) >> 4));
+		if v_x1_u32r < 0 then
+			v_x1_u32r := 0;
+		end
+		if v_x1_u32r > 419430400 then
+			v_x1_u32r := 419430400;
+		end
+		v_x1_u32r := v_x1_u32r >> 12;
+		h := v_x1_u32r;
+		h := h / 1024;
+	end
+
+end

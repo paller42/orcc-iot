@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><XDF name="pole">
+    <Instance id="BME280">
+        <Class name="pole.BME280"/>
+    </Instance>
+    <Instance id="conv_temp">
+        <Class name="pole.conv_temp"/>
+    </Instance>
+    <Instance id="conv_press">
+        <Class name="pole.conv_press"/>
+    </Instance>
+    <Instance id="conv_hum">
+        <Class name="pole.conv_hum"/>
+    </Instance>
+    <Instance id="meas_str">
+        <Class name="pole.meas_str"/>
+    </Instance>
+    <Instance id="sink_meas">
+        <Class name="pole.sink_meas"/>
+    </Instance>
+    <Instance id="t_fine_rep">
+        <Class name="pole.repeater"/>
+    </Instance>
+    <Instance id="trigger">
+        <Class name="pole.trigger"/>
+    </Instance>
+    <Connection dst="conv_temp" dst-port="raw_temp" src="BME280" src-port="raw_temp">
+        <Attribute kind="Value" name="bufferSize">
+            <Expr kind="Literal" literal-kind="Integer" value="1"/>
+        </Attribute>
+    </Connection>
+    <Connection dst="conv_press" dst-port="raw_press" src="BME280" src-port="raw_press">
+        <Attribute kind="Value" name="bufferSize">
+            <Expr kind="Literal" literal-kind="Integer" value="1"/>
+        </Attribute>
+    </Connection>
+    <Connection dst="conv_hum" dst-port="raw_hum" src="BME280" src-port="raw_hum">
+        <Attribute kind="Value" name="bufferSize">
+            <Expr kind="Literal" literal-kind="Integer" value="1"/>
+        </Attribute>
+    </Connection>
+    <Connection dst="meas_str" dst-port="temp" src="conv_temp" src-port="temp"/>
+    <Connection dst="meas_str" dst-port="press" src="conv_press" src-port="press"/>
+    <Connection dst="meas_str" dst-port="hum" src="conv_hum" src-port="hum"/>
+    <Connection dst="sink_meas" dst-port="meas_str" src="meas_str" src-port="meas_str">
+        <Attribute kind="Value" name="bufferSize">
+            <Expr kind="Literal" literal-kind="Integer" value="1"/>
+        </Attribute>
+    </Connection>
+    <Connection dst="t_fine_rep" dst-port="inp" src="conv_temp" src-port="t_fine"/>
+    <Connection dst="conv_press" dst-port="t_fine" src="t_fine_rep" src-port="out1"/>
+    <Connection dst="conv_hum" dst-port="t_fine" src="t_fine_rep" src-port="out2"/>
+    <Connection dst="BME280" dst-port="trigger" src="trigger" src-port="trigger">
+        <Attribute kind="Value" name="bufferSize">
+            <Expr kind="Literal" literal-kind="Integer" value="1"/>
+        </Attribute>
+    </Connection>
+</XDF>

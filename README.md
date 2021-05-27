@@ -12,6 +12,7 @@ guide you in dataflow-based application design after you installed Orcc-IoT.
 * [Native Actors in ORCC-IoT](NativeActors.md)
 * [How to Implement the Native Actors](NativeActorImpl.md)
 * [Native actor in C language](NativeActorInC.md)
+* [ORCC-IoT extension package for STM32F407 code generation](OrccIoTExt.md)
 * [Final report of the project](resources/Final_Report.pdf)
 
 # Prerequisites

@@ -1,0 +1,63 @@
+package pole;
+
+actor conv_press() int(size=32) raw_press, int(size=32) t_fine ==> float press :
+	@native function BME280_native_get_dig_P1() --> uint(size=32) end
+	@native function BME280_native_get_dig_P2() --> int(size=32) end
+	@native function BME280_native_get_dig_P3() --> int(size=32) end
+	@native function BME280_native_get_dig_P4() --> int(size=32) end
+	@native function BME280_native_get_dig_P5() --> int(size=32) end
+	@native function BME280_native_get_dig_P6() --> int(size=32) end
+	@native function BME280_native_get_dig_P7() --> int(size=32) end
+	@native function BME280_native_get_dig_P8() --> int(size=32) end
+	@native function BME280_native_get_dig_P9() --> int(size=32) end
+
+	p: action raw_press:[adc_P],t_fine:[t_fine] ==> press:[fp]
+	var
+		float fp,
+		int(size=64) var1,
+		int(size=64) var2,
+		int(size=64) p,
+		uint(size=64) dig_P1,
+		int(size=64) dig_P2,
+		int(size=64) dig_P3,
+		int(size=64) dig_P4,
+		int(size=64) dig_P5,
+		int(size=64) dig_P6,
+		int(size=64) dig_P7,
+		int(size=64) dig_P8,
+		int(size=64) dig_P9,
+		int(size=64) t		
+	do
+		dig_P1 := BME280_native_get_dig_P1();
+		dig_P2 := BME280_native_get_dig_P2();
+		dig_P3 := BME280_native_get_dig_P3();
+		dig_P4 := BME280_native_get_dig_P4();
+		dig_P5 := BME280_native_get_dig_P5();
+		dig_P6 := BME280_native_get_dig_P6();
+		dig_P7 := BME280_native_get_dig_P7();
+		dig_P8 := BME280_native_get_dig_P8();
+		dig_P9 := BME280_native_get_dig_P9();
+		
+		var1 := t_fine;
+		var1 := var1 - 128000;
+		var2 := var1 * var1 * dig_P6;
+		var2 := var2 + ((var1*dig_P5)<<17);
+		var2 := var2 + (dig_P4<<35);
+		var1 := ((var1 * var1 * dig_P3)>>8) + ((var1 * dig_P2)<<12);
+		t := 1;
+		t := t << 47;
+		var1 := ((t+var1)*dig_P1)>>33;
+		if var1 = 0  then 
+			p := 0;
+		else
+			p := 1048576-adc_P;
+			p := (((p<<31)-var2)*3125)/var1;
+			var1 := (dig_P9 * (p>>13) * (p>>13)) >> 25;
+			var2 := (dig_P8 * p) >> 19;
+			p := ((p + var1 + var2) >> 8) + (dig_P7<<4);
+		end
+		fp := p;
+		fp := fp / 256000.0;
+	end
+
+end

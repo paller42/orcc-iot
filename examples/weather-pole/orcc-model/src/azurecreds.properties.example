@@ -1,0 +1,21 @@
+# Properties file that the Spring-Java backend needs to create Azure-deployable code. This file needs to be located in the project' src directory with
+# the properties updated
+
+# Resource group where the ACR and queue resources are created. The name is given by the system administrator
+azure.resource.group=
+
+# Namespace of the event hub where the queue resources are created. 
+azure.eventhub.namespace=
+
+# User name of the ACR where the Docker image is deployed
+azure.acr.username=
+
+# Password of the ACR where the Docker image is deployed
+azure.acr.password=
+
+# Base URI of the queue namespace as an AMQP address. 
+azure.amqp.uri=amqps://
+
+azure.db.name=
+
+azure.db.URI=mongodb://

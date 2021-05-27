@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Network file-format="xdf" qualified-id="pole"/>
+    <Partitioning>
+        <Partition id="server_0" pe="x86_0" backend-id="Java_Server" host="intel_server">
+            <Instance id="sink_meas"/>
+        </Partition>
+        <Partition id="weather_pole" pe="ARM" backend-id="stm32f4">
+            <Instance id="trigger"/>
+            <Instance id="BME280"/>
+            <Instance id="t_fine_rep"/>
+            <Instance id="conv_temp"/>
+            <Instance id="conv_press"/>
+            <Instance id="conv_hum"/>
+            <Instance id="conv_gas"/>
+            <Instance id="meas_str"/>
+        </Partition>
+    </Partitioning>
+    <Backends>
+        <Backend id="Java_Server" backend="Java-Spring-GSMAdapter"/>
+        <Backend id="stm32f4" backend="STM32F4-C"/>
+    </Backends>
+    <Media>
+        <Interface id="gsm" medium="cloud-server">
+            <Parameter key="server_address" value="40.68.203.137:8080"/>
+        </Interface>
+    </Media>
+    <Connections>
+        <Fifo-Connection src="meas_str" src-port="meas_str" dst="sink_meas" dst-port="meas_str" size="512" medium-id="cloud-server"/>
+    </Connections>
+</Configuration>

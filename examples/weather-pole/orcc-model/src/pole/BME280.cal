@@ -1,0 +1,18 @@
+package pole;
+
+actor BME280 () bool trigger ==> int(size=32) raw_temp, int(size=32) raw_press, int(size=32) raw_hum :
+    @native function BME280_native_read_temp() --> int(size=32) end
+    @native function BME280_native_read_press() --> int(size=32) end
+    @native function BME280_native_read_hum() --> int(size=32) end
+	p: action trigger:[trigger] ==> raw_temp:[rt],raw_press:[rp],raw_hum:[rh]
+	var
+		int(size=32) rt,
+		int(size=32) rp,
+		int(size=32) rh
+	do
+		rt := BME280_native_read_temp();
+		rp := BME280_native_read_press();
+		rh := BME280_native_read_hum();
+	end
+
+end

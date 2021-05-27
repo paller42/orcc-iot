@@ -1,0 +1,12 @@
+package pole;
+
+actor repeater() int(size=32) inp ==> int(size=32) out1, int(size=32) out2 :
+	p: action  inp:[inp] ==> out1:[out1],out2:[out2]
+	var
+		int(size=32) out1,
+		int(size=32) out2
+	do
+		out1 := inp;
+		out2 := inp;
+	end
+end

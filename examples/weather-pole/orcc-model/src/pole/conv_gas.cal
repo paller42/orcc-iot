@@ -1,0 +1,11 @@
+package pole;
+
+actor conv_gas() uint(size=32) raw_gas ==> float gas :
+	p: action raw_gas:[rg] ==> gas:[g]
+	var
+		float g
+	do
+		g := rg;
+	end
+
+end

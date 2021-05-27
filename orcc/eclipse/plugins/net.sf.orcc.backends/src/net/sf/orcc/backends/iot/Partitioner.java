@@ -186,6 +186,7 @@ public class Partitioner {
 							Connection clonedConnection = 
 								DfFactory.eINSTANCE.createConnection(clonedIncomingInstance, e.getSourcePort(),
 									clonedInstance, e.getTargetPort());
+                            clonedConnection.setSize( e.getSize() );
 							networkForPartition.add(clonedConnection);
 // Else connect it to an input port
 						} else {
@@ -200,7 +201,8 @@ public class Partitioner {
 							networkForPartition.addInput(p);
 							Connection portConnection = DfFactory.eINSTANCE.createConnection(p,null,
 								clonedInstance, e.getTargetPort());
-							networkForPartition.add(portConnection);
+                            portConnection.setSize( e.getSize() );
+                            networkForPartition.add(portConnection);
 							OrccLogger.traceln("    incoming connection from: " + 
 								incomingInstanceName + "." + e.getSourcePort().getName() +
 								" to "+instanceName+"."+e.getTargetPort().getName()+
@@ -236,6 +238,7 @@ public class Partitioner {
 							Connection clonedConnection = DfFactory.eINSTANCE.createConnection(
 									clonedInstance, e.getSourcePort(),
 									clonedOutgoingInstance, e.getTargetPort());
+                            clonedConnection.setSize( e.getSize() );
 							networkForPartition.add(clonedConnection);
 // Else connect it to an output port
 						} else {
@@ -251,6 +254,7 @@ public class Partitioner {
 							Connection portConnection = DfFactory.eINSTANCE.createConnection(
 									clonedInstance, e.getSourcePort(),
 									p,null);
+                            portConnection.setSize( e.getSize() );
 							networkForPartition.add(portConnection);
 							OrccLogger.traceln("    outgoing connection from: " + instanceName + 
 										"."+e.getSourcePort().getName()+

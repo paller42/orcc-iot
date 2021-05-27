@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net.sf.orcc.df:Actor xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:net.sf.orcc.df="http://orcc.sf.net/model/2011/Df" xmlns:net.sf.orcc.ir="http://orcc.sf.net/model/2011/Ir"
+    label="pole.trigger" actionsOutsideFsm="#//@actions.0" fileName="/weather-pole/src/pole/trigger.cal"
+    lineNumber="3">
+  <actions>
+    <body lineNumber="5" name="p">
+      <locals assignable="true" defs="#//@actions.0/@body/@blocks.0/@instructions.3/@target"
+          lineNumber="7" name="trigger" uses="#//@actions.0/@body/@blocks.0/@instructions.4/@value/@use">
+        <type xsi:type="net.sf.orcc.ir:TypeBool"/>
+      </locals>
+      <blocks xsi:type="net.sf.orcc.ir:BlockBasic">
+        <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="9" procedure="#//@procs.1">
+          <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+            <value xsi:type="net.sf.orcc.ir:ExprString" value="Delay starts"/>
+          </arguments>
+          <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+            <value xsi:type="net.sf.orcc.ir:ExprString" value="\n"/>
+          </arguments>
+        </instructions>
+        <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="10" procedure="#//@procs.0">
+          <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+            <value xsi:type="net.sf.orcc.ir:ExprInt" value="10">
+              <type xsi:type="net.sf.orcc.ir:TypeUint" size="4"/>
+            </value>
+          </arguments>
+        </instructions>
+        <instructions xsi:type="net.sf.orcc.ir:InstCall" lineNumber="11" procedure="#//@procs.1">
+          <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+            <value xsi:type="net.sf.orcc.ir:ExprString" value="Delay ends"/>
+          </arguments>
+          <arguments xsi:type="net.sf.orcc.ir:ArgByVal">
+            <value xsi:type="net.sf.orcc.ir:ExprString" value="\n"/>
+          </arguments>
+        </instructions>
+        <instructions xsi:type="net.sf.orcc.ir:InstAssign" lineNumber="12">
+          <target variable="#//@actions.0/@body/@locals.0"/>
+          <value xsi:type="net.sf.orcc.ir:ExprBool" value="true"/>
+        </instructions>
+        <instructions xsi:type="net.sf.orcc.ir:InstStore" lineNumber="5">
+          <indexes xsi:type="net.sf.orcc.ir:ExprInt" value="0">
+            <type xsi:type="net.sf.orcc.ir:TypeUint" size="1"/>
+          </indexes>
+          <target variable="#//@actions.0/@outputPattern/@variables.0"/>
+          <value xsi:type="net.sf.orcc.ir:ExprVar">
+            <use variable="#//@actions.0/@body/@locals.0"/>
+          </value>
+        </instructions>
+        <instructions xsi:type="net.sf.orcc.ir:InstReturn"/>
+      </blocks>
+      <returnType xsi:type="net.sf.orcc.ir:TypeVoid"/>
+    </body>
+    <inputPattern/>
+    <outputPattern ports="#//@outputs.0">
+      <numTokensMap key="#//@outputs.0" value="1"/>
+      <portToVarMap key="#//@outputs.0" value="#//@actions.0/@outputPattern/@variables.0"/>
+      <variables assignable="true" defs="#//@actions.0/@body/@blocks.0/@instructions.4/@target"
+          lineNumber="5" name="trigger">
+        <type xsi:type="net.sf.orcc.ir:TypeList">
+          <sizeExpr xsi:type="net.sf.orcc.ir:ExprInt" value="1">
+            <type xsi:type="net.sf.orcc.ir:TypeUint" size="1"/>
+          </sizeExpr>
+          <type xsi:type="net.sf.orcc.ir:TypeBool"/>
+        </type>
+      </variables>
+      <varToPortMap key="#//@actions.0/@outputPattern/@variables.0" value="#//@outputs.0"/>
+    </outputPattern>
+    <peekPattern/>
+    <scheduler lineNumber="5" name="isSchedulable_p">
+      <locals assignable="true" defs="#//@actions.0/@scheduler/@blocks.0/@instructions.0/@target"
+          name="result" uses="#//@actions.0/@scheduler/@blocks.0/@instructions.1/@value/@use">
+        <type xsi:type="net.sf.orcc.ir:TypeBool"/>
+      </locals>
+      <blocks xsi:type="net.sf.orcc.ir:BlockBasic">
+        <instructions xsi:type="net.sf.orcc.ir:InstAssign">
+          <target variable="#//@actions.0/@scheduler/@locals.0"/>
+          <value xsi:type="net.sf.orcc.ir:ExprBool" value="true"/>
+        </instructions>
+        <instructions xsi:type="net.sf.orcc.ir:InstReturn">
+          <value xsi:type="net.sf.orcc.ir:ExprVar">
+            <use variable="#//@actions.0/@scheduler/@locals.0"/>
+          </value>
+        </instructions>
+      </blocks>
+      <returnType xsi:type="net.sf.orcc.ir:TypeBool"/>
+    </scheduler>
+    <tag>
+      <identifiers>p</identifiers>
+    </tag>
+  </actions>
+  <outputs label="trigger">
+    <type xsi:type="net.sf.orcc.ir:TypeBool"/>
+  </outputs>
+  <procs lineNumber="4" name="FW_native_delay" native="true">
+    <attributes name="native"/>
+    <blocks xsi:type="net.sf.orcc.ir:BlockBasic">
+      <instructions xsi:type="net.sf.orcc.ir:InstReturn"/>
+    </blocks>
+    <parameters>
+      <variable assignable="true" lineNumber="4" name="delay">
+        <type xsi:type="net.sf.orcc.ir:TypeInt"/>
+      </variable>
+    </parameters>
+    <returnType xsi:type="net.sf.orcc.ir:TypeVoid"/>
+  </procs>
+  <procs name="print" native="true">
+    <returnType xsi:type="net.sf.orcc.ir:TypeVoid"/>
+  </procs>
+</net.sf.orcc.df:Actor>

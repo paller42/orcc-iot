@@ -1,0 +1,29 @@
+package pole;
+
+actor conv_temp() int(size=32) raw_temp ==> float temp,int(size=32) t_fine :
+	@native function BME280_native_get_dig_T1() --> uint(size=32) end
+	@native function BME280_native_get_dig_T2() --> int(size=32) end
+	@native function BME280_native_get_dig_T3() --> int(size=32) end
+	p: action raw_temp:[adc_T] ==> temp:[t],t_fine:[t_fine]
+	var
+		float t,
+		uint(size=32) dig_T1,
+		int(size=32) dig_T2,
+		int(size=32) dig_T3,
+		int(size=32) var1,
+		int(size=32) var2,
+		int(size=32) t_fine,
+		int(size=32) T
+	do
+		dig_T1 := BME280_native_get_dig_T1();
+		dig_T2 := BME280_native_get_dig_T2();
+		dig_T3 := BME280_native_get_dig_T3();
+		var1 := ((((adc_T>>3) - ( dig_T1<<1))) * dig_T2) >> 11;
+		var2 := (((((adc_T>>4) - (dig_T1)) * ((adc_T>>4) - dig_T1)) >> 12) * dig_T3) >> 14;
+		t_fine := var1+var2;
+		T := (t_fine * 5 + 128) >> 8;
+		t := T;
+		t := t / 100.0;
+	end
+
+end

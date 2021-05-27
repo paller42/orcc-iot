@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	<feature url="features/hu.sze.orcciot.feature_0.0.1.qualifier.jar" id="hu.sze.orcciot.feature" version="0.0.1.qualifier">
+		<category name="Orcc_IoT_ext"/>
+	</feature>
+	<category-def name="Orcc_IoT_ext" label="Orcc-IoT extension package"/>
+</site>

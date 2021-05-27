@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="backends" name="backends" schema="schema/backends.exsd"/>
+   <extension
+         point="net.sf.orcc.backends.backends">
+      <backend
+            class="hu.sze.orcciot.backends.c.STM32F4.STM32F4CBackend"
+            name="STM32F4-C">
+         <option
+               id="net.sf.orcc.plugins.compileXDF">
+         </option>
+         <option
+               id="net.sf.orcc.core.classify">
+         </option>
+         <option
+               id="net.sf.orcc.backends.newScheduler">
+         </option>
+         <option
+               id="net.sf.orcc.backends.profile">
+         </option>
+         <option
+               id="net.sf.orcc.backends.checkArrayInbounds">
+         </option>
+         <option
+               id="net.sf.orcc.dontExportLibrary">
+         </option>
+         <option
+               id="net.sf.orcc.tracing.enable">
+         </option>
+         <option
+               id="net.sf.orcc.backends.inline">
+         </option>
+         <option
+               id="net.sf.orcc.backends.importBXDF">
+         </option>
+         <option
+               id="net.sf.orcc.backends.papify">
+         </option>
+         <option
+               id="net.sf.orcc.backends.genWeights">
+         </option>
+         <option
+               id="net.sf.orcc.backends.linkNativeLibrary">
+         </option>
+      </backend>
+      <backend
+            class="hu.sze.orcciot.backends.javaspring.JavaSpringBackend"
+            name="Java-Spring-GSMAdapter">
+         <option
+               id="net.sf.orcc.plugins.compileXDF">
+         </option>
+         <option
+               id="net.sf.orcc.backends.importBXDF">
+         </option>
+      </backend>      
+   </extension>
+   <extension
+         point="net.sf.orcc.core.options">
+         <option
+               defaultValue="false"
+               id="net.sf.orcc.core.classify"
+               description="This option enables optimizations such as transformation to higher-level and actor merging"
+               name="Classify actors">
+             <!-- ! -->
+            <checkBox>
+               <option
+                     defaultValue="false"
+                     description="When activated, static regions of the network will be merged together"
+                     id="net.sf.orcc.core.mergeActors"
+                     name="Merge static actors together">
+                  <checkBox></checkBox>
+               </option>
+		       <option
+		             defaultValue="false"
+		             description="When activated, static and quasi-static actors are transformed to an higher-level"
+		             id="net.sf.orcc.core.mergeActions"
+		             name="Merge static actions together">
+		          <checkBox></checkBox>
+		       </option>
+            </checkBox>
+         </option>
+         <option
+               defaultValue="false"
+               description="Uses an experimental scheduler instead of using the default round-robin scheduler"
+               id="net.sf.orcc.backends.newScheduler"
+               name="Use a smarter scheduler">
+             <!-- ! -->
+		    <checkBox></checkBox>
+         </option>
+		 <option
+		       defaultValue="false"
+		       description="Enable runtime profiling (May reduce the performance)."
+		       id="net.sf.orcc.backends.profile"
+		       name="[BETA] Profile the application">
+                          <!-- ! -->
+
+		    <checkBox></checkBox>
+		 </option>
+         <option
+               defaultValue="false"
+               description="Add C asserts to check array inbounds (need debug compilation)"
+               id="net.sf.orcc.backends.checkArrayInbounds"
+               name="Check array inbounds">
+                          <!-- ! -->
+
+            <checkBox></checkBox>
+         </option>
+         <option
+               description="Whether Orcc should compile the given hierarchical XDF network"
+               id="net.sf.orcc.plugins.compileXDF"
+               name="Compile XDF Network">
+             <!-- ! -->
+            <checkBox>
+               <optionRef
+                     id="net.sf.orcc.core.xdfFile">
+               </optionRef>
+            </checkBox>
+         </option>
+         <option
+              defaultValue="false"
+              description="Enable tracing of the FIFOs"
+              id="net.sf.orcc.tracing.enable"
+              name="Enable Traces">
+             <!-- ! -->
+            <checkBox>
+               <option
+                     description="The folder where traces are saved"
+                     id="net.sf.orcc.tracing.folder"
+                     name="Traces folder">
+                 <browseFile
+                       folder="true"
+                       workspace="false">
+                 </browseFile>
+               </option>
+            </checkBox>
+         </option>
+         <option
+               defaultValue="false"
+               description="If you made changes to the library, check this options to keep them when you regenerate the application."
+               id="net.sf.orcc.dontExportLibrary"
+               name="Don't export library">
+             <!-- ! -->
+            <checkBox/>
+         </option>
+         <option
+               defaultValue="false"
+               description="Force the inlining inside the actors to ease the profiling"
+               id="net.sf.orcc.backends.inline"
+               name="Inline all functions inside the actors">
+             <!-- ! -->
+            <checkBox>
+               <option
+                     defaultValue="false"
+                     description="Prevent the inlining of actions for deeper profiling"
+                     id="net.sf.orcc.backends.inline.notActions"
+                     name="Do not inline the actions">
+                  <checkBox></checkBox>
+               </option>
+            </checkBox>
+         </option>
+         <option
+               defaultValue="false"
+               description="Link with a native library containing native functions"
+               id="net.sf.orcc.backends.linkNativeLibrary"
+               name="Link with a native library containing native functions">
+             <!-- ! -->
+            <checkBox>
+               <option
+                     description="Path to native library folder containing CMakeLists.txt."
+                     id="net.sf.orcc.backends.linkNativeLibraryFolder"
+                     name="Path to native library folder containing CMakeLists.txt.">
+                  <browseFile
+                        folder="true"
+                        workspace="false">
+                  </browseFile>
+               </option>
+               <option
+                     description="Names of the header files (separated by &apos;;&apos;) containing all prototypes."
+                     id="net.sf.orcc.backends.linkNativeLibraryHeaders"
+                     name="Names of the header files (separated by &apos;;&apos;) containing all prototypes.">
+                  <textBox>
+                     textBox body text
+                  </textBox>
+               </option></checkBox>
+         </option>
+   </extension>
+   <extension
+         id="STM32F4-C"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="hu.sze.orcciot.backends.c.STM32F4.STM32F4CBackend">
+         </run>
+      </application>
+   </extension>
+   <extension
+         id="Java-Spring-GSMAdapter"
+         point="org.eclipse.core.runtime.applications">
+      <application
+            cardinality="singleton-global"
+            thread="main"
+            visible="true">
+         <run
+               class="hu.sze.orcciot.backends.javaspring.JavaSpringBackend">
+         </run>
+      </application>
+   </extension>
+</plugin>

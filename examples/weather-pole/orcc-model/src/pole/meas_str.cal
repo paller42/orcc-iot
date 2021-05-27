@@ -1,0 +1,12 @@
+package pole;
+
+actor meas_str() float temp, float press, float hum ==> String meas_str :
+	p: action temp:[t], press:[p], hum:[h] ==> meas_str:[s]
+	var
+		String s
+	do
+		s := t+ ":" + p +":" +h;
+		println( "Packed measurements: "+s);
+	end
+
+end
